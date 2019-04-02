@@ -12,12 +12,13 @@ class App extends React.Component {
                 <div className='title-container'><h3>The Wood Destroyer</h3></div>
                 <div className='content-container'>
                     <div className='image-container'>
-                      <img src='http://hultsbruk1697.se/wp-content/uploads/motala01.png' className='main-image'></img>
+                      {/* <img src='http://hultsbruk1697.se/wp-content/uploads/motala01.png' className='main-image'></img> */}
                     </div>
                     <div className='description-text'>
+                        <h3>Product Description:</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
-                    <div className='price-description'><h4>Price:$1,400</h4>
+                    <div className='price-description'><h4>Price:</h4><h1>$1,400</h1>
                         <button className='btn-primary'>Add To Cart</button>
                     </div> 
                 </div> {/*content-container*/}
