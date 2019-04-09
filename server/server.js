@@ -1,7 +1,7 @@
 const express = require(`express`);
 const app = express();
 const bodyParser = require(`body-parser`);
-const port = process.env.port || 8080;
+const port = process.env.port || 3000;
 const {getAllProducts} = require(`../db/db.js`);
 const cors = require(`cors`);
 require('dotenv').config();
