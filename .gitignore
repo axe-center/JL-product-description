@@ -1,6 +1,9 @@
 ## MAC files ##
 .DS_Store
-
+.vscode/
+downloads/
+.env
+package-lock.json
 ## NPM ##
 npm
 npm-debug.log
