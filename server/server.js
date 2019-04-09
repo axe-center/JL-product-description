@@ -27,9 +27,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
-app.get(`/api`, (req, res) => {
-    res.send({objectId: 1})
-})
+// app.get(`/api`, (req, res) => {
+//     res.send({objectId: 1})
+// })
 
 app.get(`/api/products`, (req, res) => {
     getAllProducts(req.body, (err, data) => {
