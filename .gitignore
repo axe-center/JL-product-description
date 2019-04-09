@@ -2,7 +2,6 @@
 .DS_Store
 .vscode/
 downloads/
-.env
 package-lock.json
 ## NPM ##
 npm
@@ -26,3 +25,5 @@ coverage
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 build/
 
+
+.env
