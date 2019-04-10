@@ -1,7 +1,7 @@
 .container {
     width: 95%;
-    background-color: #595959;
-    color: #c9c9c9;
+    /* background-color: #595959; */
+    color: #070606;
     margin: auto;
     display: block;
     padding: 5px;
@@ -15,12 +15,14 @@
     display: inline-flex;
 }
 .image-container {
-    width: 40%;
+    width: 25%;
     border: 1px solid #411313;
-    background-image: url('http://hultsbruk1697.se/wp-content/uploads/motala01.png');
+    background-image: url(http://hultsbruk1697.se/wp-content/uploads/motala01.png);
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: 80%;
+    max-height: 450px;
+    height: auto;
 }
 /* .main-image {
     width: 90%;

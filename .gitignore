@@ -3,6 +3,7 @@
 .vscode/
 downloads/
 package-lock.json
+dummyData.json
 ## NPM ##
 npm
 npm-debug.log

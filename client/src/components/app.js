@@ -1,28 +1,58 @@
 import React from 'react';
+// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Card from '@material-ui/core/Card';
+import Typography from '@material-ui/core/Typography'
+import Paper from '@material-ui/core/Paper'
+import Grid from '@material-ui/core/Grid';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import axios from 'axios';
+
 
 class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            
+            products: [],
+            tags: [],
+            currentProduct: {}
         }
-        
     }
+    componentDidMount() {
+        axios.get(`/api/products`)
+        .then(res => {
+            console.log(res)
+            this.setState({products: res.data})
+        })
+        .catch(err => {
+            console.log(`${err} there's been an error`)
+        })
+    }
+
+    selectProduct() {
+
+    }
+
     render() {
         return (
-        <div>
-            <div className='container'>
+        <Paper>
+        <CssBaseline />
+            <Grid container className='root'>
                 <div className='title-container'><h3>The Wood Destroyer</h3></div>
                 <div className='content-container'>
                     <div className='image-container'>
                       {/* <img src='http://hultsbruk1697.se/wp-content/uploads/motala01.png' className='main-image'></img> */}
                     </div>
                     <div className='description-text'>
-                        <h3>Product Description:</h3>
+                    <Typography variant='display1' align='left' gutterBottom>
+                        Product Description:
+                    </Typography>
+                        {/* <h3>Product Description:</h3> */}
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                     <div className='price-description'><h4>Price:</h4><h1>$1,400</h1>
-                        <button className='btn-primary'>Add To Cart</button>
+                        {/* <button className='btn-primary'>Add To Cart</button> */}
+                        <Card variant="contained" color="primary">Add To Cart
+                        </Card>
                     </div> 
                 </div> {/*content-container*/}
                 <div className='gallery-container'>
@@ -36,8 +66,8 @@ class App extends React.Component {
                       <img className='gallery-image' src='https://banner2.kisspng.com/20171202/f8e/axe-png-file-5a223d9d3df341.5340406415121934372538.jpg'></img>
                     </div>
                 </div>
-            </div>
-        </div>
+            </Grid>
+        </Paper>
         )
     }
 }
