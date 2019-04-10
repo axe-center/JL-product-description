@@ -16,7 +16,6 @@ AWS.config.update({
  });
  
  const s3 = new AWS.S3();
-//  console.log(`this is s3`, s3.listObjects);
 
  const params = {
     Bucket: 'fecproject'
