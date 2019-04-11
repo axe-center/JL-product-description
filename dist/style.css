@@ -81,6 +81,6 @@
     height: auto;
 
 }
-.gallery-image.active {
+.image-gallery.active {
     border: 1px solid red;
 }
