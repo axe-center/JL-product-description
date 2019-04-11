@@ -68,18 +68,22 @@
     width: 50%;
     min-height: 100px;
     margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 .image-gallery {
     width: 25%;
     min-height: 100px;
-    margin-right: 12px;
+    margin-right: 10px;
     display: inline-block;
     border: 1px solid #411313;
 }
 .gallery-image {
     width: 75%;
     height: auto;
-
+    display: flex;
+    flex-direction: column;
 }
 .image-gallery.active {
     border: 1px solid red;
