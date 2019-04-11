@@ -79,4 +79,8 @@
 .gallery-image {
     width: 75%;
     height: auto;
+
+}
+.gallery-image.active {
+    border: 1px solid red;
 }
