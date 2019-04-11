@@ -25,31 +25,31 @@ class App extends React.Component {
         }
     }
     componentDidMount() {
-        axios.get(`http://ec2-3-19-58-144.us-east-2.compute.amazonaws.com/api/products`)
-        .then(res => {
-            console.log(res)
-            this.setState({products: res.data})
-        })
-        .then(() => {
-            this.setState({currentProduct: this.state.products[0]})
-        })
-        .catch(err => {
-            console.log(`${err} there's been an error`)
-        })
+        axios.get(`http://ec2-13-59-78-47.us-east-2.compute.amazonaws.com/api/products`)
+            .then(res => {
+                console.log(res)
+                this.setState({ products: res.data })
+            })
+            .then(() => {
+                this.setState({ currentProduct: this.state.products[0] })
+            })
+            .catch(err => {
+                console.log(`${err} there's been an error`)
+            })
     }
 
     selectProduct() {
-        
+
     }
 
     render() {
         return (
-        <Paper>
-        <CssBaseline />
-            <Grid container className='root'>
-                <Product currentProduct={this.state.currentProduct}/>        
-            </Grid>
-        </Paper>
+            <Paper>
+                <CssBaseline />
+                <Grid container className='root'>
+                    <Product currentProduct={this.state.currentProduct} />
+                </Grid>
+            </Paper>
         )
     }
 }
