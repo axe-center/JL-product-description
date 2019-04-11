@@ -21,7 +21,8 @@ class App extends React.Component {
                 price: 1401,
                 productId: 1,
                 tag: "boarding"
-            }
+            },
+            productId: 50
         }
     }
     componentDidMount() {
@@ -31,11 +32,18 @@ class App extends React.Component {
                 this.setState({ products: res.data })
             })
             .then(() => {
-                this.setState({ currentProduct: this.state.products[0] })
+                this.setState({ currentProduct: this.state.products[this.state.productId - 1] })
             })
             .catch(err => {
                 console.log(`${err} there's been an error`)
             })
+        window.addEventListener('productId', (e) => {
+            this.setState({
+                productId: e.detail
+            }, () => {
+                this.setState({ currentProduct: this.state.products[this.state.productId - 1] })
+            })
+        })
     }
 
     selectProduct() {
