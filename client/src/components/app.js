@@ -55,7 +55,7 @@ class App extends React.Component {
     render() {
         return (
             <Grid container spacing={24}>
-                <Grid item xs={8}>
+                <Grid item xs={12}>
                     {/* <Paper> */}
                     <Title currentProduct={this.state.currentProduct} />
                     {/* </Paper> */}
