@@ -37,9 +37,9 @@ const Product = (props) => {
                     <div className='image-gallery'>
                         <img className='gallery-image' src={props.currentProduct.images[2]}></img>
                     </div>
-                    <div className='image-gallery'>
+                    {/* <div className='image-gallery'>
                         <img className='gallery-image' src='https://banner2.kisspng.com/20171202/f8e/axe-png-file-5a223d9d3df341.5340406415121934372538.jpg'></img>
-                    </div>
+                    </div> */}
                 </div>
         </div>
     )
