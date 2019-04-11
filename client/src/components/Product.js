@@ -25,9 +25,6 @@ class Product extends React.Component {
                     <h3>{this.props.currentProduct.name}</h3>
                 </div> */}
                 <img src={this.props.currentProduct.images[this.state.currentImage]} className='main-image'></img>
-                <div className='content-container'>
-
-                </div> {/*content-container*/}
                 <div className='gallery-container'>
                     {this.props.currentProduct.images.map((img, idx) => {
                         return <div className='image-gallery' onClick={() => this.selectImage(idx)}>
