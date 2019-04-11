@@ -1,8 +1,10 @@
 import React from 'react';
 import Product from './Product.js'
-import Card from '@material-ui/core/Card';
-import Typography from '@material-ui/core/Typography'
-import Paper from '@material-ui/core/Paper'
+import Title from './Title.js';
+import Description from './Description.js';
+import Price from './Price.js';
+import ImageGallery from './ImageGallery.js';
+import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import axios from 'axios';
@@ -52,12 +54,41 @@ class App extends React.Component {
 
     render() {
         return (
-            <Paper>
-                <CssBaseline />
-                <Grid container className='root'>
-                    <Product currentProduct={this.state.currentProduct} />
+            <Grid container spacing={24}>
+                <Grid item xs={8}>
+                    {/* <Paper> */}
+                    <Title currentProduct={this.state.currentProduct} />
+                    {/* </Paper> */}
                 </Grid>
-            </Paper>
+                <Grid item xs={6}>
+                    {/* <Paper> */}
+                    <Product currentProduct={this.state.currentProduct} />
+                    {/* </Paper> */}
+                </Grid>
+                <Grid item xs={3}>
+                    {/* <Paper> */}
+                    <Description currentProduct={this.state.currentProduct} />
+                    {/* </Paper> */}
+                </Grid>
+                <Grid item xs={3}>
+                    <Paper>
+                        <Price currentProduct={this.state.currentProduct} />
+                    </Paper>
+                </Grid>
+                <Grid container spacing={24} >
+                    <Grid item xs={4}>
+                        <Paper>
+                            {/* <ImageGallery currentProduct={this.state.currentProduct} /> */}
+                        </Paper>
+                    </Grid>
+                    {/* <Grid item xs={4}>
+                        <Paper>xs=4</Paper>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Paper>xs=4</Paper>
+                    </Grid> */}
+                </Grid>
+            </Grid>
         )
     }
 }
