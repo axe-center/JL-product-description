@@ -84,3 +84,10 @@
 .image-gallery.active {
     border: 1px solid red;
 }
+.MuiCard-root-161 {
+    font-weight: 900;
+    text-align: center;
+    font-size: x-large;
+    background-color: firebrick !important;
+    color: white;
+}
