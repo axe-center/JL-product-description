@@ -24,7 +24,7 @@ class App extends React.Component {
                 productId: 1,
                 tag: "boarding"
             },
-            productId: 100
+            productId: 42
         }
     }
     componentDidMount() {
@@ -75,7 +75,7 @@ class App extends React.Component {
                         <Price currentProduct={this.state.currentProduct} />
                     </Paper>
                 </Grid>
-                <Grid container spacing={24} >
+                <Grid container spacing={16} >
                     <Grid item xs={4}>
                         <Paper>
                             {/* <ImageGallery currentProduct={this.state.currentProduct} /> */}
