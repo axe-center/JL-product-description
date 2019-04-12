@@ -2,7 +2,6 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import { withStyles } from '@material-ui/core/styles';
-import color from '@material-ui/core/colors/lightBlue';
 
 const styles = {
     cartText: {

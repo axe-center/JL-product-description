@@ -39,16 +39,8 @@
     /* border: 1px solid red; */
     /* margin: auto; */
 }
-.title-container {
-    font-size: 2em;
-    text-align: left;
-    /* display: inline; */
-    width: 100%;
-    /* width: 28%; */
-    letter-spacing: 2px;
-    /* text-align: center; */
-    margin: auto;
-    /* border: 1px solid red; */
+.title {
+    color: black !important;
 }
 .price-description {
     text-align: center;

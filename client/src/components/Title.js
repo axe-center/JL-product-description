@@ -2,19 +2,20 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
+
+
 const styles = {
-    headline: {
-        fontSize: `x-large`,
-        color: `white`,
+    root: {
+        color: 'black',
     }
 }
 
 function Title(props) {
     const classes = { props };
     return (
-        <div className={classes.headline}>
-            <Typography variant='display3'>{props.currentProduct.name}</Typography>
-        </div>
+        <div>
+            <Typography variant='display3' style={{ color: 'black' }} className={classes.root}>{props.currentProduct.name}</Typography>
+        </div >
     )
 }
 

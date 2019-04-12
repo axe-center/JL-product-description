@@ -24,13 +24,13 @@ class App extends React.Component {
                 productId: 1,
                 tag: "boarding"
             },
-            productId: 42
+            productId: 95
         }
     }
     componentDidMount() {
         axios.get(`http://ec2-13-59-78-47.us-east-2.compute.amazonaws.com/api/products`)
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 this.setState({ products: res.data })
             })
             .then(() => {
