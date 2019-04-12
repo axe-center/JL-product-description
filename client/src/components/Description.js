@@ -1,5 +1,11 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = {
+
+}
+
 const Description = (props) => {
     return (
         <div>
@@ -14,4 +20,4 @@ const Description = (props) => {
     )
 }
 
-export default Description;
+export default withStyles(styles)(Description);
