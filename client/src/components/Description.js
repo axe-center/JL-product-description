@@ -3,7 +3,9 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
-
+    description: {
+        textAlign: `left`
+    }
 }
 
 const Description = (props) => {
@@ -13,7 +15,7 @@ const Description = (props) => {
                 Product Description:
             </Typography>
             {/* <h3>Product Description:</h3> */}
-            <Typography variant='body1' align='center' gutterBottom>
+            <Typography variant='body1' align='left' gutterBottom>
                 {props.currentProduct.description}
             </Typography>
         </div>
