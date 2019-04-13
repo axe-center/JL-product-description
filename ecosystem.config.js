@@ -6,7 +6,7 @@ module.exports = {
   deploy: {
     production: {
       user: 'ubuntu',
-      host: 'ec2-13-59-78-47.us-east-2.compute.amazonaws.com',
+      host: 'ec2-13-58-247-135.us-east-2.compute.amazonaws.com',
       key: '~/.ssh/FEC.pem',
       ref: 'origin/master',
       repo: 'https://github.com/axe-center/JL-product-description',

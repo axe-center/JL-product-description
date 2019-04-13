@@ -29,7 +29,7 @@ class App extends React.Component {
         }
     }
     componentDidMount() {
-        axios.get(`http://ec2-13-59-78-47.us-east-2.compute.amazonaws.com/api/products`)
+        axios.get(`http://ec2-13-58-247-135.us-east-2.compute.amazonaws.com`)
             .then(res => {
                 // console.log(res)
                 this.setState({ products: res.data })
