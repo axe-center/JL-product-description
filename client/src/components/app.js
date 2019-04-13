@@ -44,16 +44,16 @@ class App extends React.Component {
                 console.log(`${err} there's been an error`)
             })
         window.addEventListener('productId', (e) => {
-            let product;
-            for (let i = 0; i < this.state.products.length; i++) {
-                if (this.state.products[i].productId === this.state.productId) {
-                    product = this.state.products[i];
-                }
-            }
             this.setState({
                 productId: e.detail,
-                currentProduct: product
             }, () => {
+                let product;
+                for (let i = 0; i < this.state.products.length; i++) {
+                    if (this.state.products[i].productId === this.state.productId) {
+                        product = this.state.products[i];
+                    }
+                }
+                this.setState({ currentProduct: product })
             })
         })
     }
