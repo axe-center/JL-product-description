@@ -20,7 +20,8 @@ const styles = {
         textAlign: `center`,
         color: `black`,
         width: `-webkit-fill-available`,
-        backgroundColor: `#f8f8f8`
+        backgroundColor: `#f8f8f8`,
+        padding: `10px`
     },
     color: {
         backgroundColor: `#f8f8f8`,
@@ -29,6 +30,9 @@ const styles = {
         backgroundColor: `#b12222`,
         color: `#fff`,
         // float: `right`
+    },
+    paperPadding: {
+        padding: `10px`
     }
 }
 class Price extends React.Component {
@@ -55,14 +59,14 @@ class Price extends React.Component {
         const { classes } = this.props;
         return (
             <Grid container spacing={24}>
-                <Card variant="contained" className={classes.color} className={classes.price}>
+                <Card variant="contained" className={classes.color} className={classes.price} classes={classes.paperPadding}>
                     <Grid item xs={12}>
                         <Typography variant='display1' className={classes.priceText}>Price:</Typography>
                         <Typography variant='display2' className={classes.price}>${this.props.currentProduct.price}</Typography>
                     </Grid>
                     {/* <button className='btn-primary'>Add To Cart</button> */}
                     <Grid item xs>
-                        <Typography><input type='text' onChange={(e) => { this.handleClick(e, 'change') }} maxLength='2' size='2' value={this.state.quantityCount} style={{ float: `left` }} className='quantity-counter'></input></Typography>
+                        <Typography><input type='number' onChange={(e) => { this.handleClick(e, 'change') }} maxLength='2' size='2' value={this.state.quantityCount} style={{ float: `left` }} className='quantity-counter'></input></Typography>
                     </Grid>
                     <Grid item xs>
                         <span className='arrows'>
