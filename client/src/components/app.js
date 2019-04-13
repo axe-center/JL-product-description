@@ -42,7 +42,11 @@ class App extends React.Component {
             this.setState({
                 productId: e.detail
             }, () => {
-                this.setState({ currentProduct: this.state.products[this.state.productId - 1] })
+                for (let i = 0; i < this.state.products.length; i++) {
+                    if (this.state.products[i].product === this.state.productId) {
+                        this.setState({ currentProduct: this.state.products[i] })
+                    }
+                }
             })
         })
     }

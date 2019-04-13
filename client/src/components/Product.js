@@ -15,7 +15,13 @@ class Product extends React.Component {
     selectImage(idx) {
         this.setState({ currentImage: idx })
     }
+    imageEnter(e) {
+        console.log(e);
+    }
 
+    imageLeave(e) {
+        console.log(e)
+    }
 
     render() {
         return (
@@ -24,7 +30,7 @@ class Product extends React.Component {
                 {/* <div className='title-container'>
                     <h3>{this.props.currentProduct.name}</h3>
                 </div> */}
-                <img src={this.props.currentProduct.images[this.state.currentImage]} className='main-image'></img>
+                <img src={this.props.currentProduct.images[this.state.currentImage]} className='main-image' onMouseEnter={(e) => { this.imageEnter(e) }} onMouseLeave={(e) => { this.imageLeave(e) }}></img>
                 <div className='gallery-container'>
                     {this.props.currentProduct.images.map((img, idx) => {
                         return <div className={`image-gallery ${idx === this.state.currentImage ? 'active' : ''}`} key={idx} onClick={() => this.selectImage(idx)}>
