@@ -24,7 +24,6 @@ class App extends React.Component {
                 tag: "boarding"
             },
             productId: 22,
-            quantityCount: 1
         }
     }
     componentDidMount() {
@@ -48,6 +47,9 @@ class App extends React.Component {
         })
     }
 
+    quantityChange(value) {
+        this.state({ quantityCount: value })
+    }
     // quantityChange(value) {
     //     this.setState({ quantityCount: value })
     // }
@@ -72,7 +74,7 @@ class App extends React.Component {
                 </Grid>
                 <Grid item xs={3}>
                     <Paper style={{ width: `-webkit-fill-available` }}>
-                        <Price currentProduct={this.state.currentProduct} />
+                        <Price quantityCount={this.state.quantityCount} quantityChange={this.quantityChange.bind(this)} currentProduct={this.state.currentProduct} />
                     </Paper>
                 </Grid>
                 <Grid container spacing={16}>
