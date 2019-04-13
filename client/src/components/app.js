@@ -3,7 +3,6 @@ import Product from './Product.js'
 import Title from './Title.js';
 import Description from './Description.js';
 import Price from './Price.js';
-import ImageGallery from './ImageGallery.js';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -29,7 +28,7 @@ class App extends React.Component {
         }
     }
     componentDidMount() {
-        axios.get(`http://ec2-13-58-247-135.us-east-2.compute.amazonaws.com`)
+        axios.get(`http://ec2-13-58-247-135.us-east-2.compute.amazonaws.com/api/products`)
             .then(res => {
                 // console.log(res)
                 this.setState({ products: res.data })
@@ -49,9 +48,9 @@ class App extends React.Component {
         })
     }
 
-    quantityChange(value) {
-        this.setState({ quantityCount: value })
-    }
+    // quantityChange(value) {
+    //     this.setState({ quantityCount: value })
+    // }
 
     render() {
         return (
@@ -76,7 +75,7 @@ class App extends React.Component {
                         <Price currentProduct={this.state.currentProduct} />
                     </Paper>
                 </Grid>
-                <Grid container spacing={16} quantitychange={this.quantityChange.bind(this)} quantitycount={this.state.quantityCount}>
+                <Grid container spacing={16}>
                     <Grid item xs={4}>
                         <Paper>
                             {/* <ImageGallery currentProduct={this.state.currentProduct} /> */}
