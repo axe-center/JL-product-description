@@ -42,7 +42,7 @@ function Price(props) {
                 </Grid>
                 {/* <button className='btn-primary'>Add To Cart</button> */}
                 <Grid item xs>
-                    <Typography><input type='text' maxLength='2' value='1' size='2' style={{ float: `left` }} className='quantity-counter'></input></Typography>
+                    <Typography><input type='text' maxLength='2' size='2' style={{ float: `left` }} className='quantity-counter'></input></Typography>
                 </Grid>
                 <Grid item xs>
                     <span className='arrows'>
