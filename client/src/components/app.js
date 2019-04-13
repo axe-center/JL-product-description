@@ -23,30 +23,37 @@ class App extends React.Component {
                 productId: 1,
                 tag: "boarding"
             },
-            productId: 22,
+            productId: 95,
         }
     }
     componentDidMount() {
         axios.get(`http://ec2-13-58-247-135.us-east-2.compute.amazonaws.com/api/products`)
             .then(res => {
-                // console.log(res)
-                this.setState({ products: res.data })
+                let currentItem;
+                this.setState({ products: res.data }, () => {
+                    for (let i = 0; i < this.state.products.length; i++) {
+                        if (this.state.products[i].productId === this.state.productId) {
+                            currentItem = this.state.products[i];
+                        }
+                    }
+                    this.setState({ currentProduct: currentItem })
+                })
             })
-            .then(() => {
-                this.setState({ currentProduct: this.state.products[this.state.productId - 1] })
-            })
+
             .catch(err => {
                 console.log(`${err} there's been an error`)
             })
         window.addEventListener('productId', (e) => {
-            this.setState({
-                productId: e.detail
-            }, () => {
-                for (let i = 0; i < this.state.products.length; i++) {
-                    if (this.state.products[i].product === this.state.productId) {
-                        this.setState({ currentProduct: this.state.products[i] })
-                    }
+            let product;
+            for (let i = 0; i < this.state.products.length; i++) {
+                if (this.state.products[i].productId === this.state.productId) {
+                    product = this.state.products[i];
                 }
+            }
+            this.setState({
+                productId: e.detail,
+                currentProduct: product
+            }, () => {
             })
         })
     }
