@@ -3,12 +3,14 @@ import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import PinchZoomPan from 'react-responsive-pinch-zoom-pan';
 
 class Product extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            currentImage: 0
+            currentImage: 0,
+            isHovering: false
         }
     }
 
@@ -25,12 +27,10 @@ class Product extends React.Component {
 
     render() {
         return (
-
             <div>
-                {/* <div className='title-container'>
-                    <h3>{this.props.currentProduct.name}</h3>
-                </div> */}
-                <img src={this.props.currentProduct.images[this.state.currentImage]} className='main-image' onMouseEnter={(e) => { this.imageEnter(e) }} onMouseLeave={(e) => { this.imageLeave(e) }}></img>
+                <PinchZoomPan doubleTapBehavior='zoom' position='center' initialScale={1} minScale={1} maxScale={4}>
+                    <img src={this.props.currentProduct.images[this.state.currentImage]} className='main-image' onMouseEnter={(e) => { this.imageEnter(e) }} onMouseLeave={(e) => { this.imageLeave(e) }}></img>
+                </PinchZoomPan>
                 <div className='gallery-container'>
                     {this.props.currentProduct.images.map((img, idx) => {
                         return <div className={`image-gallery ${idx === this.state.currentImage ? 'active' : ''}`} key={idx} onClick={() => this.selectImage(idx)}>
