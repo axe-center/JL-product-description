@@ -47,11 +47,12 @@ class Price extends React.Component {
         if (string === 'up') {
             this.setState({ quantityCount: this.state.quantityCount + 1 })
         }
-        if (string === 'down') {
+        if (string === 'down' && this.state.quantityCount > 0) {
             this.setState({ quantityCount: this.state.quantityCount - 1 })
         }
         if (string === 'change') {
-            this.setState({ quantityCount: e.target.value })
+            console.log(`type`, typeof e.target.value)
+            this.setState({ quantityCount: parseInt(e.target.value) })
         }
     }
 
