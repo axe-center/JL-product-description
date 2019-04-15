@@ -3,6 +3,7 @@ import Product from './Product.js'
 import Title from './Title.js';
 import Description from './Description.js';
 import Price from './Price.js';
+import AdditionalInfo from './AdditionalInfo.js';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -84,17 +85,15 @@ class App extends React.Component {
                     {/* </Paper> */}
                 </Grid>
                 <Grid item xs={3}>
-                    <Paper style={{ width: `-webkit-fill-available` }}>
-                        <Price quantityCount={this.state.quantityCount} quantityChange={this.quantityChange.bind(this)} currentProduct={this.state.currentProduct} />
-                    </Paper>
+                    <Price quantityCount={this.state.quantityCount} quantityChange={this.quantityChange.bind(this)} currentProduct={this.state.currentProduct} />
                 </Grid>
-                <Grid container spacing={16}>
-                    <Grid item xs={4}>
-                        <Paper>
-                            {/* <ImageGallery currentProduct={this.state.currentProduct} /> */}
+                {/* <Grid container spacing={16}>
+                    <Grid item xs={3}>
+                        <Paper style={{ width: `-webkit-fill-available` }}>
+                            <AdditionalInfo />
                         </Paper>
                     </Grid>
-                </Grid>
+                </Grid> */}
             </Grid>
         )
     }

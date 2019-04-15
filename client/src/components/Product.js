@@ -28,7 +28,7 @@ class Product extends React.Component {
     render() {
         return (
             <div>
-                <PinchZoomPan doubleTapBehavior='zoom' position='center' initialScale={1} minScale={1} maxScale={4}>
+                <PinchZoomPan doubleTapBehavior='zoom' position='center' initialScale={1} minScale={1} maxScale={4} zoomButtons={false}>
                     <img src={this.props.currentProduct.images[this.state.currentImage]} className='main-image' onMouseEnter={(e) => { this.imageEnter(e) }} onMouseLeave={(e) => { this.imageLeave(e) }}></img>
                 </PinchZoomPan>
                 <div className='gallery-container'>
