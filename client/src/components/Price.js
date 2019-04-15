@@ -1,8 +1,10 @@
 import React from 'react';
+// import AdditionalInfo from './AdditionalInfo.js';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 const styles = {
@@ -60,26 +62,31 @@ class Price extends React.Component {
         const { classes } = this.props;
         return (
             <Grid container spacing={24}>
-                <Card variant="contained" className={classes.color} className={classes.price} classes={classes.paperPadding}>
-                    <Grid item xs={12}>
-                        <Typography variant='display1' className={classes.priceText}>Price:</Typography>
-                        <Typography variant='display2' className={classes.price}>${this.props.currentProduct.price}</Typography>
-                    </Grid>
-                    {/* <button className='btn-primary'>Add To Cart</button> */}
-                    <Grid item xs>
-                        <Typography><input type='number' onChange={(e) => { this.handleClick(e, 'change') }} maxLength='2' size='2' value={this.state.quantityCount} style={{ float: `left` }} className='quantity-counter'></input></Typography>
-                    </Grid>
-                    <Grid item xs>
-                        <span className='arrows'>
-                            <button onClick={(e) => { this.handleClick(e, `up`) }}><i className="arrow up"></i></button>
-                            <button onClick={(e) => { this.handleClick(e, `down`) }}><i className="arrow down"></i></button>
-                        </span>
-                    </Grid>
-                    <Grid item xs>
-                        <Button variant='contained' className={classes.button}>Add To Cart</Button>
-                        <Typography variant='body2' className={classes.cartText}></Typography>
-                    </Grid>
-                </Card>
+                <Paper style={{ width: `-webkit-fill-available` }}>
+                    <Card variant="contained" className={classes.color} className={classes.price} >
+                        <Grid item xs={12}>
+                            <Typography variant='display1' className={classes.priceText}>Price:</Typography>
+                            <Typography variant='display2' className={classes.price}>${this.props.currentProduct.price}</Typography>
+                        </Grid>
+                        {/* <button className='btn-primary'>Add To Cart</button> */}
+                        <Grid item xs>
+                            <Typography><input type='number' onChange={(e) => { this.handleClick(e, 'change') }} maxLength='2' size='2' value={this.state.quantityCount} style={{ float: `left` }} className='quantity-counter'></input></Typography>
+                        </Grid>
+                        <Grid item xs>
+                            <span className='arrows'>
+                                <button onClick={(e) => { this.handleClick(e, `up`) }}><i className="arrow up"></i></button>
+                                <button onClick={(e) => { this.handleClick(e, `down`) }}><i className="arrow down"></i></button>
+                            </span>
+                        </Grid>
+                        <Grid item xs>
+                            <Button variant='contained' className={classes.button}>Add To Cart</Button>
+                            <Typography variant='body2' className={classes.cartText}></Typography>
+                        </Grid>
+                    </Card>
+                </Paper>
+                {/* <Paper style={{ width: `-webkit-fill-available` }} style={{ marginTop: `10%` }}>
+                    <AdditionalInfo />
+                </Paper> */}
             </Grid >
         )
     }
