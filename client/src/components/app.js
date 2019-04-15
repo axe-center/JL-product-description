@@ -24,7 +24,7 @@ class App extends React.Component {
                 productId: 1,
                 tag: "boarding"
             },
-            productId: 95,
+            productId: 7,
         }
     }
     componentDidMount() {
